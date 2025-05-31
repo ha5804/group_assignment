@@ -12,6 +12,7 @@ user_input = input("입력: ").replace(' ','')
 user_input = user_input.split(',')
 #print(user_input)
 
+rate_val = []
 for i in user_input:
     row = data[data[f"국가별"] == i]
     
