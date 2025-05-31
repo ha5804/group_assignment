@@ -10,9 +10,14 @@ print("과거의 환율 변동을 통한 유익한 정보를 제공하는 프로
 
 user_input = input("입력: ").replace(' ','')
 user_input = user_input.split(',')
-print(user_input)
+#print(user_input)
 
 for i in user_input:
     row = data[data[f"국가별"] == i]
+
+while True:
+    user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
+    if user_input2 == "yes":
+        
     
 
