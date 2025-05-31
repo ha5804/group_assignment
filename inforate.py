@@ -31,8 +31,12 @@ while True:
         ax.set_title("국가별 10년 환율", fontsize = 14)
         ax.set_xlabel("YEAR", fontsize = 14)
         ax.set_ylabel("RATE", fontsize = 14)
+        key = []
+        value = []
         for k, v in rate_dic.items():
-            plt.plot(v, color = 'red')
+            key.append(k)
+            v = float(v)
+            value.append(v)
         plt.show()
             
 
