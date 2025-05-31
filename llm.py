@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 
-user_order = input("환율에 대한 무엇이 궁금하시나요?: ")
+user_order = input("이 국가들의 환율에 대해해 무엇이 궁금하시나요?: ")
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
   api_key="<OPENROUTER_API_KEY>",
