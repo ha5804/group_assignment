@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 data = pd.read_csv('rate.csv')
 print("과거의 환율 변동을 통한 유익한 정보를 제공하는 프로그램입니다.\n" \
