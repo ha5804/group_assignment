@@ -12,23 +12,22 @@ user_input = input("입력: ").replace(' ','')
 user_input = user_input.split(',')
 #print(user_input)
 
-rate_val = []
+rate_dic = {}
 for i in user_input:
     row = data[data[f"국가별"] == i]
+    key = row.iloc[0, 0]
     val = row.iloc[0, 1:]
-    for v in val.values:
-        rate_val.append(v)
-
+    rate_dic[key] = [i for i in val.values]
+    
+print(rate_dic)
 #print(rate_val)
-
-    
-    
 
 # while True:
 #     user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
 #     if user_input2 == "no":
 #         False
 #     elif user_input2 == "yes":
+
         
         
     
