@@ -12,7 +12,7 @@ completion = client.chat.completions.create(
       "role": "user",
       "content": "",
       "role": "system",
-      "content": "미국을 포함한 다른 나라들의 10년치 환율(달러 대비) 값들이야. 현재 각 나라들의 환율이 높은지 낮은지를를"
+      "content": "미국을 포함한 다른 나라들의 10년치 환율(달러 대비) 값들이야. 현재 각 나라들의 환율이 높은지 낮은지를 알려주고 향후 환율 추이가 어떨지 예측해줘."
     }
   ]
 )
