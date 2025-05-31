@@ -1,1 +1,1 @@
-print("ex")
+from pathlib import Path
