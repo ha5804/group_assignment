@@ -22,11 +22,22 @@ for i in user_input:
 print(rate_dic)
 #print(rate_val)
 
-# while True:
-#     user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
-#     if user_input2 == "no":
-#         False
-#     elif user_input2 == "yes":
+while True:
+    user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
+    if user_input2 == "no":
+        False
+    elif user_input2 == "yes":
+        fig, ax = plt.subplots()
+        ax.set_title("국가별 10년 환율", fontsize = 14)
+        ax.set_xlabel("YEAR", fontsize = 14)
+        ax.set_ylabel("RATE", fontsize = 14)
+        for k, v in rate_dic.items():
+            plt.plot(v, color = 'red')
+        plt.show()
+            
+
+        
+
 
         
         
