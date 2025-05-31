@@ -15,8 +15,12 @@ user_input = user_input.split(',')
 rate_val = []
 for i in user_input:
     row = data[data[f"국가별"] == i]
-    val = row.iloc[0, :]
-    print(val)
+    val = row.iloc[0, 1:]
+    for v in val.values:
+        rate_val.append(v)
+
+#print(rate_val)
+
     
     
 
