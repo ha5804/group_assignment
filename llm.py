@@ -18,7 +18,7 @@ completion = client.chat.completions.create(
     {
       "role": "user",
       "content": user_order,
-      "content": rate_dic  
+      "content": rate_dic,  
       "role": "system",
       "content": "너는 환율에 대한 답변을 해주는 어시스턴트야."
     }  
