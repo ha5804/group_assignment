@@ -9,14 +9,18 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
+  extra_headers={
+    "HTTP-Referer": "<YOUR_SITE_URL>", # Optional. Site URL for rankings on openrouter.ai.
+    "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
+  },
+  extra_body={},  
   model="meta-llama/llama-3.3-8b-instruct:free",
   messages=[
     {
       "role": "user",
       "content": user_order,
-      "content": me
       "role": "system",
-      "content": "너는 환율에 대한 답변을 해주는 어시스턴트야. "
+      "content": "너는 환율에 대한 답변을 해주는 어시스턴트야."
     }
   ]
 )
