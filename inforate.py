@@ -26,20 +26,19 @@ rate = []
 for k , v in rate_dic.items():
     rate.append(v)
     country.append(k)
-print(country)
-print(rate)
-print(year)
+# print(country)
+# print(rate)
+# print(year)
 rate_1 = rate[0]
 rate_2 = rate[1]
 rate_3 = rate[2]
 rate_4 = rate[3]
 rate_5 = rate[4]
-print(rate_1)
-print(rate_2)
-print(rate_3)
-print(rate_4)
-print(rate_5)
-
+# print(rate_1)
+# print(rate_2)
+# print(rate_3)
+# print(rate_4)
+# print(rate_5)
 
 while True:
     user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
@@ -62,6 +61,7 @@ while True:
         plt.legend(loc = 'upper right', fontsize = 14)
         plt.show()
         break
+
 
 
             
