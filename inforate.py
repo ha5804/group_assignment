@@ -46,20 +46,20 @@ while True:
     if user_input2 == "no":
        False
     elif user_input2 == "yes":
-        fig, ax = plt.subplots()
-        ax.set_title("Rate information", fontsize = 8)
-        ax.set_xlabel("YEAR", fontsize = 8)
-        ax.set_ylabel("RATE", fontsize = 8)
-        ax.plot(year, rate_1, color = 'red', label = "1 input country", marker = '.')
-        ax.plot(year, rate_2, color = 'blue', label = "2 input country", marker = '.')
-        ax.plot(year, rate_3, color = 'green', label = "3 input country", marker = '.')
-        ax.plot(year, rate_4, color = 'yellow', label = "4 input country", marker = '.')
-        ax.plot(year, rate_5, color = 'orange', label = "5 input country", marker = '.')
-        ax.tick_params("x", labelsize = 7)
-        ax.tick_params("y", labelsize = 7)
+        fig, ax = plt.subplots(figsize = (15, 9))
+        ax.set_title("<Rate information> \n ***Each label number represents the order of the countries you entered.***" ,fontsize = 14)
+        ax.set_xlabel("YEAR", fontsize = 14)
+        ax.set_ylabel("RATE", fontsize = 14)
+        ax.plot(year, rate_1, color = 'red', label = "1", marker = '.')
+        ax.plot(year, rate_2, color = 'blue', label = "2", marker = '.')
+        ax.plot(year, rate_3, color = 'green', label = "3", marker = '.')
+        ax.plot(year, rate_4, color = 'yellow', label = "4", marker = '.')
+        ax.plot(year, rate_5, color = 'orange', label = "5", marker = '.')
+        ax.tick_params("x", labelsize = 14)
+        ax.tick_params("y", labelsize = 14)
         ax.set_xticks(year)
         ax.set_yticks([])
-        plt.legend()
+        plt.legend(loc = 'upper right', fontsize = 14)
         plt.show()
         break
 
