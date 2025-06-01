@@ -31,7 +31,7 @@ while True:
         ax.set_title("국가별 10년 환율", fontsize = 8)
         ax.set_xlabel("YEAR", fontsize = 8)
         ax.set_ylabel("RATE", fontsize = 8)
-        for k, v in rate_dic
+        for k, v in rate_dic:
             
         plt.show()
             
