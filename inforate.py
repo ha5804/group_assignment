@@ -55,8 +55,9 @@ while True:
         ax.plot(year, rate_3, color = 'green', label = country[2])
         ax.plot(year, rate_4, color = 'yellow', label = country[3])
         ax.plot(year, rate_5, color = 'orange', label = country[4])
-        ax.tick_params("x", labelsize = 3)
-        ax.tick_params("y", labelsize = 3)
+        ax.tick_params("x", labelsize = 5)
+        ax.tick_params("y", labelsize = 5)
+        ax.set_xticks(year)
         plt.legend()
         plt.show()
         break
