@@ -29,6 +29,16 @@ for k , v in rate_dic.items():
 print(country)
 print(rate)
 print(year)
+rate_1 = rate[0]
+rate_2 = rate[1]
+rate_3 = rate[2]
+rate_4 = rate[3]
+rate_5 = rate[4]
+print(rate_1)
+print(rate_2)
+print(rate_3)
+print(rate_4)
+print(rate_5)
 
 
 while True:
