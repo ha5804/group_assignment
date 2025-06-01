@@ -12,14 +12,13 @@ user_input = input("입력: ").replace(' ','')
 user_input = user_input.split(',')
 #print(user_input)
 
-rate_dic = {}
 for i in user_input:
     row = data[data[f"국가별"] == i]
-    key = row.iloc[0, 0]
-    val = row.iloc[0, 1:]
-    rate_dic[key] = [i for i in val.values]
+    print(row)
+    # key = row.iloc[0, 0]
+    # val = row.iloc[0, 1:]
+    # rate_dic[key] = [i for i in val.values]
     
-print(rate_dic)
 #print(rate_val)
 
 while True:
@@ -31,9 +30,8 @@ while True:
         ax.set_title("국가별 10년 환율", fontsize = 8)
         ax.set_xlabel("YEAR", fontsize = 8)
         ax.set_ylabel("RATE", fontsize = 8)
-        for k, v in rate_dic:
+        
             
-        plt.show()
             
 
         
