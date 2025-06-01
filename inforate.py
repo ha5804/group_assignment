@@ -50,13 +50,14 @@ while True:
         ax.set_title("국가별 10년 환율", fontsize = 8)
         ax.set_xlabel("YEAR", fontsize = 8)
         ax.set_ylabel("RATE", fontsize = 8)
-        ax.plot(year, rate_1, color = 'red')
-        ax.plot(year, rate_2, color = 'blue')
-        ax.plot(year, rate_3, color = 'green')
-        ax.plot(year, rate_4, color = 'yellow')
-        ax.plot(year, rate_5, color = 'orange')
-        ax.legend()
-        ax.show()
+        ax.plot(year, rate_1, color = 'red', label = country[0])
+        ax.plot(year, rate_2, color = 'blue', label = country[1])
+        ax.plot(year, rate_3, color = 'green', label = country[2])
+        ax.plot(year, rate_4, color = 'yellow', label = country[3])
+        ax.plot(year, rate_5, color = 'orange', label = country[4])
+        plt.legend()
+        plt.show()
+        break
 
 
             
