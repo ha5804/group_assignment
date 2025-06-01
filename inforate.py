@@ -22,24 +22,25 @@ for i in user_input:
 country = []
 year = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
 rate = []
-for k , v in rate_dic.items():
-    rate.append(float(v))
-    country.append(v)
-print(country)
-print(year)
-print(rate_dic)
-#print(rate_val)
 
-# while True:
-#     user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
-#     if user_input2 == "no":
-#         False
-#     elif user_input2 == "yes":
-#         fig, ax = plt.subplots()
-#         ax.set_title("국가별 10년 환율", fontsize = 8)
-#         ax.set_xlabel("YEAR", fontsize = 8)
-#         ax.set_ylabel("RATE", fontsize = 8)
-#         for k, v in rate_dic:
+for k , v in rate_dic.items():
+    rate.append(v)
+    country.append(k)
+print(country)
+print(rate)
+print(year)
+
+
+while True:
+    user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
+    if user_input2 == "no":
+       False
+    elif user_input2 == "yes":
+        fig, ax = plt.subplots()
+        ax.set_title("국가별 10년 환율", fontsize = 8)
+        ax.set_xlabel("YEAR", fontsize = 8)
+        ax.set_ylabel("RATE", fontsize = 8)
+
             
             
 
