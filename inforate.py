@@ -15,7 +15,7 @@ while True:
         if i not in data["국가별"]:
             print("유호하지 않은 국가 입니다.\n 출력형식을 확인하거나 다시 입력해주세요!")
         else:
-            print("입력한 국가에 대해 확인중입니다.")
+            print("입력한 국가가 유효합니다.\n")
     if len(user_input) == 5:
         break
     else:
