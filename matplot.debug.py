@@ -30,6 +30,9 @@ def my_plot(year , rate_list , user_country, len_user_input):
             plt.grid(True, linestyle = ":")
             plt.show()
             break
+        else:
+            print("입력 형식은 yes , no 입니다. 다시 입력해주세요!")
+            print()
 
 while True:
     user_input = input("입력: ").replace(' ','')
