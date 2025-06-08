@@ -11,11 +11,16 @@ print()
 while True:
     user_input = input("입력: ").replace(' ','')
     user_input = user_input.split(',')
+    for i in user_input:
+        if i not in data["국가별"]:
+            print("유호하지 않은 국가 입니다.\n 출력형식을 확인하거나 다시 입력해주세요!")
+        else:
+            print("입력한 국가에 대해 확인중입니다.")
     if len(user_input) == 5:
         break
     else:
-        print("국가 입력갯수는 5개입니다.")
-        print()
+        print("국가를 5개 입력해주세요")
+
     
 
 year = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
@@ -35,7 +40,7 @@ while True:
     print()
     user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
     if user_input2 == "no":
-       False
+       break
     elif user_input2 == "yes":
         plt.figure(figsize = (10, 6))
         plt.rc("font", family = "AppleGothic")
@@ -51,6 +56,8 @@ while True:
         plt.grid(True, linestyle = ":")
         plt.show()
         break
+    else:
+        print("입력 형식을 다시 확인해주세요!")
 
 
 
