@@ -12,53 +12,36 @@ user_input = input("입력: ").replace(' ','')
 user_input = user_input.split(',')
 #print(user_input)
 
-rate_dic = {}
-for i in user_input:
-    row = data[data[f"국가별"] == i]
-    key = row.iloc[0, 0]
-    val = row.iloc[0, 1:]
-    rate_dic[key] = [i for i in val.values]
-
-country = []
 year = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
-rate = []
+x = data["국가별"]
 
-for k , v in rate_dic.items():
-    rate.append(v)
-    country.append(k)
-# print(country)
-# print(rate)
-# print(year)
-rate_1 = rate[0]
-rate_2 = rate[1]
-rate_3 = rate[2]
-rate_4 = rate[3]
-rate_5 = rate[4]
-# print(rate_1)
-# print(rate_2)
-# print(rate_3)
-# print(rate_4)
-# print(rate_5)
+user_country = [] #한그래프가 될 국가
+for i in x:
+    if (i in user_input):
+        user_country.append(i)
 
+rate_list = [] #y축에 들어갈 환율값
+for i in user_input:
+    rate = data[data["국가별"] == i]
+    rate_list.append(rate)
+    
 while True:
     user_input2 = input("데이터 시각화를 희망하시면 yes, 아니면 no라고 입력하세요: ")
     if user_input2 == "no":
        False
     elif user_input2 == "yes":
-        fig, ax = plt.subplots(figsize = (15, 9))
-        ax.set_title("<Rate information> \n ***Each label number represents the order of the countries you entered.***" ,fontsize = 14)
-        ax.set_xlabel("YEAR", fontsize = 14)
-        ax.set_ylabel("RATE", fontsize = 14)
-        ax.plot(year, rate_1, color = 'red', label = "1", marker = '.')
-        ax.plot(year, rate_2, color = 'blue', label = "2", marker = '.')
-        ax.plot(year, rate_3, color = 'green', label = "3", marker = '.')
-        ax.plot(year, rate_4, color = 'yellow', label = "4", marker = '.')
-        ax.plot(year, rate_5, color = 'orange', label = "5", marker = '.')
-        ax.tick_params("x", labelsize = 14)
-        ax.tick_params("y", labelsize = 14)
-        ax.set_xticks(year)
-        ax.set_yticks([])
-        plt.legend(loc = 'upper right', fontsize = 14)
+        plt.figure(figsize = (10, 6))
+        plt.rc("font", family = "AppleGothic")
+        plt.plot(year, rate_list[0].iloc[0][1:], label = user_country[0], color = 'red', marker = '.')
+        plt.plot(year, rate_list[1].iloc[0][1:], label = user_country[1], color = 'orange', marker = '.')
+        plt.plot(year, rate_list[2].iloc[0][1:], label = user_country[2], color = 'green', marker = '.')
+        plt.plot(year, rate_list[3].iloc[0][1:], label = user_country[3], color = 'blue', marker = '.')
+        plt.plot(year, rate_list[4].iloc[0][1:], label = user_country[4], color = 'purple', marker = '.')
+        plt.xlabel("year")
+        plt.ylabel("rate")
+        plt.legend(loc = "upper right")
+        plt.xticks(year, rotation = 45)
+        plt.grid(True, linestyle = ":")
         plt.show()
         break
 
