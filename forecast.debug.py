@@ -99,6 +99,12 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 
 
+fig, ax = plt.subplots()
+
+month = ["January", "February", "March", "Aprill", "May", "June"]
+
+value = []
+
 
 
 
