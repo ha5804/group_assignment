@@ -21,7 +21,7 @@ completion = client.chat.completions.create(
     },  
     {
       "role": "system",
-      "content": "너는 환율에 대한 답변을 해주는 어시스턴트야. 을 바탕으로 답변을 해줘."
+      "content": "너는 환율에 대한 답변을 해주는 어시스턴트야. user_order을 바탕으로 답변을 해줘."
     }  
   ]
 )
