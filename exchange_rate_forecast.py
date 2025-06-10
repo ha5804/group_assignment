@@ -4,6 +4,9 @@ while True:
    input_country = input("국가: ")
    if input_country in x:
      wanting_country = input_country
+     break
+   else: 
+      print("유효한 국가를 입력해주세요.")
     
 
 
