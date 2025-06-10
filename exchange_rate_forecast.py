@@ -1,8 +1,9 @@
 from openai import OpenAI
 
-input_country = input("국가: ")
-if input_country in x:
-    wanting_country = input_country
+while True:
+   input_country = input("국가: ")
+   if input_country in x:
+     wanting_country = input_country
     
 
 
