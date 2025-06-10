@@ -8,9 +8,7 @@ while True:
     break
   
   else:
-    order_list.append()
-
-  
+    order_list.append(user_order)
   
 
 
