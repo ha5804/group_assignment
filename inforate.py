@@ -27,8 +27,8 @@ year = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
 x = data["국가별"]
 
 user_country = [] #한그래프가 될 국가
-for i in x:
-    if (i in user_input):
+for i in user_input:
+    if (i in x):
         user_country.append(i)
 
 rate_list = [] #y축에 들어갈 환율값
