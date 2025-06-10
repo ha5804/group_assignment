@@ -13,7 +13,6 @@ while True:
 
 
 
-
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
   api_key="",
@@ -29,7 +28,7 @@ completion = client.chat.completions.create(
   messages=[
     {
       "role": "user",
-      "content": user_order
+      "content": order_list
     },  
     {
       "role": "system",
