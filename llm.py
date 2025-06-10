@@ -3,6 +3,7 @@ from openai import OpenAI
 
 while True:
   user_order = input("이 국가들의 환율에 대해 무엇이 궁금하시나요?: ")
+  order_list = []
   
 
 
