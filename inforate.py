@@ -10,8 +10,7 @@ print()
 
 while True:
     user_input = input("입력: ").replace(' ','')
-    user_input = user_input.split(',')
-    
+    user_input = user_input.split(',')   
     for i in user_input:
         if i not in data["국가별"]:
             print("유효하지 않은 국가 입니다.\n 출력형식을 확인하거나 다시 입력해주세요!")
