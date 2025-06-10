@@ -3,10 +3,13 @@ from openai import OpenAI
 while True:
    input_country = input("국가: ")
    if input_country in x:
-     wanting_country = input_country
      break
    else: 
       print("유효한 국가를 입력해주세요.")
+
+c_rate = data[data["국가별"] == input_country]
+b = c_rate.iloc[0][1:]
+  
     
 
 
@@ -25,7 +28,7 @@ completion = client.chat.completions.create(
   messages=[
     {
       "role": "user",
-      "content": 
+      "content": b
     },  
     {
       "role": "system",
