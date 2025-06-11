@@ -34,3 +34,14 @@ score_1.append(int(input("답변의 속도는 적당했나요?: ")))
 score_2.append(int(input("질문에 대한 궁금증이 해결되었나요?: ")))
 score_3.append(int(input("답변이 너무 어렵지 않았나요?: ")))
 print("설문에 응해주셔서 감사합니다!")
+
+total_score = sum(score_1 + score_2 + score_3)
+mean_score = total_score / (user_count / 3)
+y_score = [sum(score_1) / user_count, sum(score_2)/ user_count, sum(score_3)/ user_count]
+
+plt.figure(figsize=(10,6))
+plt.bar(x_label, y_score, color='skyblue', edgecolor = 'black')
+plt.title("Our Program Score From Evaluate")
+plt.xticks(x_label)
+plt.grid(True, linestyle = ':')
+plt.show()
