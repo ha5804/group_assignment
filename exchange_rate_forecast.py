@@ -10,6 +10,12 @@ client = OpenAI(
 count_question = 0
 user_count = 10
 
+while True:
+    user_q = input("환율에 관한 궁금한 점들을 물어보세요!\n""종료를 희망하시면 exit이라고 적어주세요: ")
+    if(user_q.lower() == "exit"):
+        break
+  
+
 
 completion = client.chat.completions.create(
   extra_headers={
