@@ -1,44 +1,47 @@
 from openai import OpenAI
 import matplotlib.pyplot as plt
 
-while True:
-   input_country = input("국가: ")
-   if input_country in x:
-     break
-   else: 
-      print("유효한 국가를 입력해주세요.")
-
-c_rate = data[data["국가별"] == input_country]
-b = c_rate.iloc[0][1:]
-  
-    
-
-
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
   api_key="",
 )
 
-completion = client.chat.completions.create(
-  extra_headers={
-    "HTTP-Referer": "<YOUR_SITE_URL>", # Optional. Site URL for rankings on openrouter.ai.
-    "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
-  },
-  extra_body={},  
-  model="meta-llama/llama-3.3-8b-instruct:free",
-  messages=[
-    {
-      "role": "user",
-      "content": b
-    },  
-    {
-      "role": "system",
-      "content": "다음 데이터를 기반으로 향후 6개월 간의 환율 전망을 제공해주세요. 전망은 월별로 명확하게 제시하고, JSON 형식으로 제공해 주세요."
-    }  
-  ]
-)
-print(completion.choices[0].message.content)
 
+count_question = 0
+user_count = 10
 
+while True:
+    user_q = input("환율에 관한 궁금한 점들을 물어보세요!\n""종료를 희망하시면 exit이라고 적어주세요: ")
+    if(user_q.lower() == "exit"):
+        break
+    
+    else:
+       completion = client.chat.completions.create(
+          model="meta-llama/llama-3.3-8b-instruct:free",
+          messages=[{"role": "system","content": user_q}])
+       count_question += 1
+       user_count += 1
+       print(completion.choices[0].message.content)
 
-completion.choices[0].message.content
+score_1 = []
+score_2 = []
+score_3 = []
+
+x_label = ["spped", "accuracy", "clarity", "mean_score"]
+print(f"{count_question}번의 질문에 대한 간단한 설문 부탁드립니다!\n""다음 질문에 대해서 1~10점 사이로 숫자만 작성해주세요.")
+
+score_1.append(int(input("답변의 속도는 적당했나요?: ")))
+score_2.append(int(input("질문에 대한 궁금증이 해결되었나요?: ")))
+score_3.append(int(input("답변이 너무 어렵지 않았나요?: ")))
+print("설문에 응해주셔서 감사합니다!")
+
+total_score = sum(score_1 + score_2 + score_3)
+mean_score = total_score / (user_count / 3)
+y_score = [sum(score_1) / user_count, sum(score_2)/ user_count, sum(score_3)/ user_count]
+
+plt.figure(figsize=(10,6))
+plt.bar(x_label, y_score, color='skyblue', edgecolor = 'black')
+plt.title("Our Program Score From Evaluate")
+plt.xticks(x_label)
+plt.grid(True, linestyle = ':')
+plt.show()
