@@ -3,13 +3,15 @@ import matplotlib.pyplot as plt
 from openai import OpenAI
 
 data = pd.read_csv('rate.csv')
+#pandas로 환율 데이터 읽어괴
 print("과거의 환율 변동을 통한 유익한 정보를 제공하는 프로그램입니다.\n" \
 "조회하고 싶은 국가들중 미국을 포함한 국가들을 입력하세요. :) \n" \
 "입력형식은 희망하는 국가들을 쉼표(,)를 기준으로 작성해주세요! \n" 
 "예시) 미국, 대한민국, 중국, 일본, 베트남")
 print()
 
-
+#my_plot함수를 따로 지정해서, 
+# 입력한 국가 수를 인자로 받아 유동적으로 plot할 수 있도록 설정
 def my_plot(year , rate_list , user_country, len_user_input):
     color_list = ["red", "orange", "green", "blue", "purple", "pink", "gray", "brown", "gray", "gold", "silver", "cyan", "navy"]
     while True:
@@ -35,6 +37,7 @@ def my_plot(year , rate_list , user_country, len_user_input):
             print("입력 형식은 yes , no 입니다. 다시 입력해주세요!")
             print()
 
+#while문을 통해 반복적으로 국가 입력 받기. + 예외처리
 while True:
     user_input = input("입력: ").replace(' ','')
     user_input = user_input.split(',')
@@ -45,9 +48,9 @@ while True:
     else:
         break
 
-
+#csv의 데이터 plot 편의성 위해 미리 year 리스트 작성
 year = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
-x = data["국가별"]
+x = data["국가별"] #x값을 국가로 설정
 
 user_country = [] #한그래프가 될 국가
 for i in x:
@@ -86,10 +89,12 @@ while True:
        completion = client.chat.completions.create(
           model="meta-llama/llama-3.3-8b-instruct:free",
           messages=[{"role": "system","content": user_q}])
-       count_question += 1
+       #반복 질문할때마다 count 추가하기
+       count_question += 1 
        user_count += 1
        print(completion.choices[0].message.content)
 
+#plot시각화 위해 예시 스코어 리스트 준비해놓기
 score_1 = [10, 8 ,9 ,10, 7 ,8 ,4 , 6, 8, 7]
 score_2 = [8, 8 ,5 ,10, 7 ,7 ,4 , 9, 9, 7]
 score_3 = [9, 9 ,1 ,7, 10 ,2 ,5 , 3, 8, 9]
