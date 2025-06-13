@@ -9,6 +9,7 @@ while True:
   
   else:
     order_list.append(user_order)
+    break
   
 
 

@@ -92,3 +92,44 @@ for i in range(len(rate_list)):
         
     
 
+
+
+
+while True:
+  user_order = input("이 국가들의 환율에 대해 무엇이 궁금하시나요?: ")
+  if user_order.lower() == "exit":
+    order_str = "exit"
+    break
+  
+  else:
+    order_str = str(user_order)
+    break
+
+
+  
+  
+
+client = OpenAI(
+  base_url="https://openrouter.ai/api/v1",
+  api_key="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",
+)
+
+completion = client.chat.completions.create(
+  extra_headers={
+    "HTTP-Referer": "<YOUR_SITE_URL>", # Optional. Site URL for rankings on openrouter.ai.
+    "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
+  },
+  extra_body={},  
+  model="meta-llama/llama-3.3-8b-instruct:free",
+  messages=[
+    {
+      "role": "user",
+      "content": order_str
+    },  
+    {
+      "role": "system",
+      "content": "너는 환율에 대한 답변을 해주는 어시스턴트야. order_str을 바탕으로 답변을 해줘. order_str의 값이 exit이면 \"끝났습니다\"라고 말만 해."
+    }  
+  ]
+)
+print(completion.choices[0].message.content)
