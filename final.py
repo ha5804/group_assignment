@@ -28,6 +28,7 @@ def my_plot(year , rate_list , user_country, len_user_input):
                 plt.plot(year, rate_list[i].iloc[0][1:], label = user_country[i], color = color_list[i], marker = '.')
             plt.xlabel("year")
             plt.ylabel("rate")
+            plt.yscale('log')
             plt.legend(loc = "upper right")
             plt.xticks(year, rotation = 45)
             plt.grid(True, linestyle = ":")
@@ -61,6 +62,7 @@ rate_list = [] #y축에 들어갈 환율값
 for i in user_input:
     rate = data[data["국가별"] == i]
     rate_list.append(rate)
+
 #========================call plot function=======================
 my_plot(year, rate_list, user_country, len(user_input))
 
