@@ -87,9 +87,9 @@ while True:
        user_count += 1
        print(completion.choices[0].message.content)
 
-score_1 = []
-score_2 = []
-score_3 = []
+score_1 = [10, 8 ,9 ,10, 7 ,8 ,4 , 6, 8, 7]
+score_2 = [8, 8 ,5 ,10, 7 ,7 ,4 , 9, 9, 7]
+score_3 = [9, 9 ,1 ,7, 10 ,2 ,5 , 3, 8, 9]
 
 x_label = ["spped", "accuracy", "clarity", "mean_score"]
 print(f"\n{count_question}번의 질문에 대한 간단한 설문 부탁드립니다!\n""다음 질문에 대해서 1~10점 사이로 숫자만 작성해주세요.")
@@ -106,7 +106,7 @@ print(f"입력점수: {s_3}")
 print("\n설문에 응해주셔서 감사합니다!")
 
 total_score = sum(score_1 + score_2 + score_3)
-mean_score = total_score / (user_count / 3)
+mean_score = total_score / (3 * len(score_1))
 y_score = [sum(score_1) / user_count, sum(score_2)/ user_count, sum(score_3)/ user_count, mean_score]
 
 plt.figure(figsize=(10,6))
