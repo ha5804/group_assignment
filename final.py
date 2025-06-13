@@ -75,7 +75,7 @@ print("\n\n\n============================================"
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key="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",
+  api_key="",
 )
 
 
