@@ -62,7 +62,8 @@ for i in user_input:
 my_plot(year, rate_list, user_country, len(user_input))
 
 #========================run LLM======================
-print("방금 보신 자료에 대한 궁금중을 풀어드립니다!")
+print("\n\n\n============================================"
+      "\n방금 보신 자료에 대한 궁금중을 풀어드립니다!")
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
@@ -91,12 +92,18 @@ score_2 = []
 score_3 = []
 
 x_label = ["spped", "accuracy", "clarity", "mean_score"]
-print(f"{count_question}번의 질문에 대한 간단한 설문 부탁드립니다!\n""다음 질문에 대해서 1~10점 사이로 숫자만 작성해주세요.")
+print(f"\n{count_question}번의 질문에 대한 간단한 설문 부탁드립니다!\n""다음 질문에 대해서 1~10점 사이로 숫자만 작성해주세요.")
 
-score_1.append(int(input("답변의 속도는 적당했나요?: ")))
-score_2.append(int(input("질문에 대한 궁금증이 해결되었나요?: ")))
-score_3.append(int(input("답변이 너무 어렵지 않았나요?: ")))
-print("설문에 응해주셔서 감사합니다!")
+s_1 = int(input("\n답변의 속도는 적당했나요?: "))
+score_1.append(s_1)
+print(f"입력 점수 : {s_1}")
+s_2 = int(input("\n질문에 대한 궁금증이 해결되었나요?: "))
+score_2.append(s_2)
+print(f"입력점수: {s_2}")
+s_3 = int(input("\n답변이 너무 어렵지 않았나요?: "))
+score_3.append(s_3)
+print(f"입력점수: {s_3}")
+print("\n설문에 응해주셔서 감사합니다!")
 
 total_score = sum(score_1 + score_2 + score_3)
 mean_score = total_score / (user_count / 3)
