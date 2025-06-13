@@ -63,11 +63,14 @@ my_plot(year, rate_list, user_country, len(user_input))
 
 #========================run LLM======================
 print("\n\n\n============================================"
-      "\n방금 보신 자료에 대한 궁금중을 풀어드립니다!")
+      "\n방금 보신 자료에 대한 궁금중을 풀어드립니다!"
+      "\n--ex)미국의 환율은 왜 1이야? 한국어로 간단하게 답변해줘--"
+      "\n위 양식으로 질문하시면 좀더 빠르고 정확한 답변이 가능합니다 :)")
+
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key="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",
+  api_key="",
 )
 
 
@@ -75,7 +78,7 @@ count_question = 0
 user_count = 10
 
 while True:
-    user_q = input("환율에 관한 궁금한 점들을 물어보세요!\n""종료를 희망하시면 exit이라고 적어주세요: ")
+    user_q = input("\n환율에 관한 궁금한 점들을 물어보세요!\n""종료를 희망하시면 exit이라고 적어주세요: ")
     if(user_q.lower() == "exit"):
         break
     
