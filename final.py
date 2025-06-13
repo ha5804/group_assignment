@@ -107,7 +107,7 @@ print("\n설문에 응해주셔서 감사합니다!")
 
 total_score = sum(score_1 + score_2 + score_3)
 mean_score = total_score / (user_count / 3)
-y_score = [sum(score_1) / user_count, sum(score_2)/ user_count, sum(score_3)/ user_count]
+y_score = [sum(score_1) / user_count, sum(score_2)/ user_count, sum(score_3)/ user_count, mean_score]
 
 plt.figure(figsize=(10,6))
 plt.bar(x_label, y_score, color='skyblue', edgecolor = 'black')
